@@ -2,7 +2,7 @@
   "name": "task-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gregory0401.github.io/Task",
+  "homepage": "https://Gregory0401.github.io/Task",
   "dependencies": {
     "@progress/kendo-react-charts": "^5.12.1",
     "@progress/kendo-theme-material": "^6.2.0",
