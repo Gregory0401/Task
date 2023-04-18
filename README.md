@@ -13,10 +13,8 @@
 ![screenshot](https://github.com/GoDmitrAn/tweets-test/blob/main/screen.jpg)
 
 <h2 align="center">
-  <a href="https://godmitran.github.io/tweets-test" style="font-size: 18px"><b>Demo</b></a>
+  <a href="https://gregory0401.github.io/Task/" style="font-size: 18px"><b>Demo</b></a>
 </h2>
-
-
 
 ## Доступні скрипти
 
