@@ -1,12 +1,12 @@
 import s from "../View/Tweets.module.css";
 import { CardItem } from "./CardItem";
 import { useState, useEffect } from "react";
-// import { fetchTitles } from "../fetch/api";
+import { fetchTitles } from "../fetch/api";
 import usePagination from "../hooks/pagination";
 import { Dropdown } from "../dropdown/Dropdown";
 
 export const ContactList = () => {
-  const [titles, setTitles] = useState([]);
+  const [titles, setTitles] = useState(fetchTitles);
   const [value, setValue] = useState("showAll");
 
   const savedUsers = JSON.parse(localStorage.getItem("savedInfo"));
