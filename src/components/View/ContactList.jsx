@@ -1,16 +1,16 @@
-import s from '../View/Tweets.module.css';
-import { CardItem } from './CardItem';
-import { useState, useEffect } from 'react';
-import { fetchTitles } from '../fetch/api';
-import usePagination from '../hooks/pagination';
-import { Dropdown } from '../dropdown/Dropdown';
+import s from "../View/Tweets.module.css";
+import { CardItem } from "./CardItem";
+import { useState, useEffect } from "react";
+// import { fetchTitles } from "../fetch/api";
+import usePagination from "../hooks/pagination";
+import { Dropdown } from "../dropdown/Dropdown";
 
 export const ContactList = () => {
   const [titles, setTitles] = useState([]);
-  const [value, setValue] = useState('showAll');
+  const [value, setValue] = useState("showAll");
 
-  const savedUsers = JSON.parse(localStorage.getItem('savedInfo'));
-  !savedUsers && localStorage.setItem('savedInfo', JSON.stringify(titles));
+  const savedUsers = JSON.parse(localStorage.getItem("savedInfo"));
+  !savedUsers && localStorage.setItem("savedInfo", JSON.stringify(titles));
   const users = savedUsers ? savedUsers : titles;
 
   const { firstContentIndex, lastContentIndex, loadMore } = usePagination({
@@ -21,16 +21,16 @@ export const ContactList = () => {
   useEffect(() => {
     try {
       async function fetchUsers() {
-        const result = await fetchTitles();
+        const result = await titles;
         setTitles(result);
       }
       fetchUsers();
     } catch (error) {
-      alert('ERRROORRRR');
+      alert("ERRROORRRR");
     }
-  }, []);
+  });
 
-  const handleSelected = value => {
+  const handleSelected = (value) => {
     setValue(value);
   };
 
@@ -38,23 +38,23 @@ export const ContactList = () => {
     <>
       <Dropdown handleSelected={handleSelected} />
 
-      {value === 'follow' && (
+      {value === "follow" && (
         <ul className={s.items}>
-          {users.slice(firstContentIndex, lastContentIndex).map(user => {
+          {users.slice(firstContentIndex, lastContentIndex).map((user) => {
             return !user.isClicked && <CardItem key={user.id} user={user} />;
           })}
         </ul>
       )}
-      {value === 'following' && (
+      {value === "following" && (
         <ul className={s.items}>
-          {users.slice(firstContentIndex, lastContentIndex).map(user => {
+          {users.slice(firstContentIndex, lastContentIndex).map((user) => {
             return user.isClicked && <CardItem key={user.id} user={user} />;
           })}
         </ul>
       )}
-      {value === 'showAll' && (
+      {value === "showAll" && (
         <ul className={s.items}>
-          {users.slice(firstContentIndex, lastContentIndex).map(user => {
+          {users.slice(firstContentIndex, lastContentIndex).map((user) => {
             return <CardItem key={user.id} user={user} />;
           })}
         </ul>
