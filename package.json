@@ -1,8 +1,8 @@
 {
-  "name": "test-task-social",
+  "name": "test-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yana-palam.github.io/test-task-social/",
+  "homepage": "https://gregory0401.github.io/Task/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.3",
