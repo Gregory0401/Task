@@ -1,13 +1,16 @@
-import s from './AppBar.module.css';
-import Navigation from './Navigation/Navigation';
+import React from 'react';
+import Navigation from 'components/Navigation/Navigation';
+import Container from 'components/Container/Container';
+import { Wrapper } from './AppBar.styled';
 
-export default function AppBar() {
+function AppBar() {
   return (
-    <>
-      <div className={s.container}>
-        <header className={s.text}>twitter users</header>
+    <Wrapper>
+      <Container>
         <Navigation />
-      </div>
-    </>
+      </Container>
+    </Wrapper>
   );
 }
+
+export default AppBar;

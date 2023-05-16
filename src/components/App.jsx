@@ -1,18 +1,22 @@
-import { Tweets } from './View/Tweets';
-import { Routes } from 'react-router';
-import { Route } from 'react-router-dom';
-import AppBar from './AppBar/AppBar';
-import HomeView from './View/Home';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { lazy } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Layout from './Layout';
+const TweetsPage = lazy(() => import('pages/TweetsPage'));
+const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   return (
     <>
-      <AppBar />
       <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/tweets" element={<Tweets />} />
-        <Route path="*" element={<HomeView />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/tweets" element={<TweetsPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
       </Routes>
+      <ToastContainer />
     </>
   );
 };
