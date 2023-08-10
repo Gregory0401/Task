@@ -11,7 +11,7 @@
 
 <p align="center"><img src="/assets/logoTweets.png"></p>
 
-<h2 align="center"><a  href='https://yana-palam.github.io/test-task-social'>Жива сторінка</a></h2>
+
 
 <h2>Опис додатку</h2>
 <ul>
